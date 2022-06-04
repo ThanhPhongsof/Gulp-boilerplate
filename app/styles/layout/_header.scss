@@ -7,22 +7,218 @@
     ),
     url("../images/img-header-bg.jpg") no-repeat center / cover;
   color: #fff;
-  a {
-    color: #fff;
+
+  // header top
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 3rem;
   }
   &-logo {
     font-size: 3rem;
     font-weight: bold;
   }
+  &-menu {
+    display: flex;
+  }
   &-menu-link {
     text-transform: uppercase;
     display: inline-block;
-    padding-bottom: 1rem;
-    border-bottom: 4px solid transparent;
     transition: all 0.25s linear;
-    &:hover {
-      color: $secondary-color;
-      border-bottom-color: $secondary-color;
+  }
+  &-logo,
+  &-menu-link,
+  &-menu-icon {
+    color: #fff;
+  }
+  // end header top
+
+  // header content
+  &-content {
+    padding-top: 17rem;
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  &-content-caption {
+    font-size: 7.2rem;
+    font-family: $third-font;
+    margin-bottom: 3rem;
+  }
+  &-content-main {
+    font-size: 15rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6rem;
+      height: 0.5rem;
+      background-color: #fff;
+    }
+  }
+  &-content-more {
+    padding: 1rem 3rem;
+    color: #fff;
+    border: 0.4rem solid #fff;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  &-toggle {
+    display: none;
+  }
+  // end header content
+
+  // header bottom
+  &-bottom {
+    margin-top: 15.5rem;
+    padding-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &-bottom-item {
+    padding-top: 2.5rem;
+    border-top: 0.5rem solid #fff;
+    width: calc(25% - 30px);
+    margin-left: 30px;
+    opacity: 0.6;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 7rem;
+      background-color: $primary-color;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.25s linear;
+    }
+  }
+  &-bottom-item:hover,
+  &-bottom-item.is-active {
+    opacity: 1;
+    &::after {
+      opacity: 1;
+    }
+  }
+  &-bottom-number {
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+  &-bottom-text {
+    margin-left: 1rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+  // end header bottom
+
+  @media screen and (max-width: 1023px) {
+    min-height: unset;
+    &-bottom {
+      margin-top: 10.5rem;
+    }
+    &-content {
+      padding-top: 10rem;
+    }
+    &-content-main {
+      font-size: 10rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &-menu-item:not(first-child) {
+      margin-left: 5rem;
+    }
+    &-menu-link {
+      padding-bottom: 1rem;
+      border-bottom: 4px solid transparent;
+      &:hover {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &-bottom-text {
+      display: none;
+    }
+    &-toggle {
+      display: inline-block;
+      align-self: center;
+    }
+    &-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      width: 30rem;
+      display: block;
+      padding: 20px 25px;
+      z-index: 2;
+      transform: translateX(100%);
+      transition: all 0.25s ease-in;
+    }
+    &-menu.is-expand {
+      transform: translateX(0);
+    }
+    &-menu-item {
+      margin-bottom: 1rem;
+    }
+    &-menu-link {
+      color: $title-color;
+      width: 100%;
+      padding: 15px;
+      border-radius: 4px;
+      &:hover {
+        color: #fff;
+        background-color: $secondary-color;
+      }
+    }
+    &-menu-icon {
+      display: inline-block;
+      color: $title-color;
+      padding: 15px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    &-content {
+      padding-top: 5rem;
+    }
+    &-content-caption {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    &-content-main {
+      font-size: 6rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    &-bottom {
+      margin-top: 5rem;
+    }
+    &-bottom-item {
+      text-align: center;
+      padding-top: 1.5rem;
+      &:after {
+        width: 35%;
+      }
     }
   }
 }
