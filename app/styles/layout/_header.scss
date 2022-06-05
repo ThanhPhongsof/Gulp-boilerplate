@@ -125,7 +125,7 @@
   }
   // end header bottom
 
-  @media screen and (max-width: 1023px) {
+  @include maxWidth(1023px) {
     min-height: unset;
     &-bottom {
       margin-top: 10.5rem;
@@ -138,7 +138,7 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @include minWidth(768px) {
     &-menu-item:not(first-child) {
       margin-left: 5rem;
     }
@@ -152,7 +152,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @include maxWidth(767px) {
     &-bottom-text {
       display: none;
     }
