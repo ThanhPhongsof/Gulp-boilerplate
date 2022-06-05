@@ -360,3 +360,44 @@ body {
           display: none; }
       .about-item {
         scroll-snap-align: start; } }
+
+.number {
+  background-color: #95e1d3; }
+  .number-list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr); }
+  .number-item {
+    padding: 8.5rem 3.5rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    border-left: 1px solid #fff; }
+    .number-item:last-child {
+      border-right: 1px solid #fff; }
+  .number-item-count {
+    font-size: 7.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem; }
+  .number-item-text {
+    line-height: 1.4; }
+  @media screen and (max-width: 1023px) {
+    .number-item {
+      padding: 5rem 1.5rem; }
+    .number-item-count {
+      font-size: 5rem;
+      margin-bottom: 1rem; }
+    .number-item-text {
+      font-size: 1.4rem; } }
+  @media screen and (max-width: 767px) {
+    .number-list {
+      display: block; }
+    .number-item {
+      width: 100%;
+      border-left: 0;
+      padding: 2.5rem 1.5rem; }
+      .number-item :last-child {
+        border-right: 0; }
+      .number-item :not(last-child) {
+        border-bottom: 1px solid #fff; } }
