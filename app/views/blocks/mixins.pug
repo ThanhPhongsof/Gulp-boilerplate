@@ -26,3 +26,10 @@ mixin numberItem(count, text)
 	.number-item
 		h4.number-item-count=count
 		span.number-item-text=text
+
+mixin serviceItem(image, title, desc)
+	.service-item
+		img.service-item-icon(src=image)
+		.service-item-info
+			h3.service-item-title=title
+			p.service-item-desc=desc

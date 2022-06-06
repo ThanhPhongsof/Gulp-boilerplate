@@ -401,3 +401,59 @@ body {
         border-right: 0; }
       .number-item :not(last-child) {
         border-bottom: 1px solid #fff; } }
+
+.service {
+  padding: 11rem 0 12rem;
+  background-color: #fff; }
+  .service-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-left: -4rem;
+    margin-top: 6.5rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .service-item {
+    width: calc(33.33% - 4rem);
+    margin-left: 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+  .service-item-icon {
+    width: 3.5rem;
+    margin: 0 3rem; }
+  .service-item-info {
+    width: calc(100% - 9.5rem); }
+  .service-item-title {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase; }
+  .service-item-desc {
+    color: #c5c5c5;
+    line-height: 1.6;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif; }
