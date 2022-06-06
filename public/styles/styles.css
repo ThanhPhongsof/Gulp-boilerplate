@@ -57,7 +57,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #c5c5c5;
+    color: #999;
     line-height: 1.4;
     margin-bottom: 10rem; }
   @media screen and (max-width: 767px) {
@@ -412,22 +412,24 @@ body {
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    margin-left: -4rem;
     margin-top: 6.5rem;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+    .service-list:first-of-type {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 5rem;
+      padding-bottom: 5rem; }
   .service-item {
-    width: calc(33.33% - 4rem);
-    margin-left: 4rem;
+    width: calc(33.33% - 2.7rem);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -451,9 +453,22 @@ body {
   .service-item-title {
     color: #333;
     margin-bottom: 1.5rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: 500; }
   .service-item-desc {
-    color: #c5c5c5;
+    color: #999;
     line-height: 1.6;
     font-weight: 300;
     font-family: "Roboto", sans-serif; }
+  @media screen and (max-width: 1023px) {
+    .service {
+      padding: 5rem 0; }
+      .service-list {
+        display: block; }
+      .service-item {
+        width: 100%;
+        margin-bottom: 3rem; }
+      .service-item-title {
+        margin-bottom: 1rem; }
+      .service-item:not(:last-child) {
+        margin-bottom: 3rem; } }
