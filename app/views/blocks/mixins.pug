@@ -33,3 +33,12 @@ mixin serviceItem(image, title, desc)
 		.service-item-info
 			h3.service-item-title=title
 			p.service-item-desc=desc
+
+mixin wedoItem(image,title,classIcon,text,classActive="")
+	.wedo-item(class=classActive)
+		.wedo-item-header
+			img(src=image).wedo-item-icon
+			h3.wedo-item-title=title
+			i.wedo-item-arrow(class=classIcon)
+		.wedo-item-content
+			.wedo-item-text=text
