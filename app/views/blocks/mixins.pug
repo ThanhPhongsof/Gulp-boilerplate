@@ -42,3 +42,29 @@ mixin wedoItem(image,title,classIcon,text,classActive="")
 			i.wedo-item-arrow(class=classIcon)
 		.wedo-item-content
 			.wedo-item-text=text
+
+mixin teamSocial(facebook = "#",twitter ="#",pinterest = "#",instagram = "#")
+	ul.team-social
+		li.team-social-item
+			a.team-social-link(href=facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item
+			a.team-social-link(href=twitter)
+				i.fab.fa-twitter
+		li.team-social-item
+			a.team-social-link(href=pinterest)
+				i.fab.fa-pinterest-p
+		li.team-social-item
+			a.team-social-link(href=instagram)
+				i.fab.fa-instagram
+
+mixin teamItem(image, teamName, teamPosition)
+	.team-item
+		.team-main
+			img(src=image, alt="").team-image
+			.team-content
+				if block
+					block
+		.team-info
+			h3.team-name=teamName
+			span.team-position=teamPosition		

@@ -1,0 +1,72 @@
+.team {
+  --team-image-height: 47rem;
+  @include bg(#fff);
+  padding: 10rem 0;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 3rem;
+  }
+  &-image {
+    @include size(100%, var(--team-image-height));
+  }
+  &-info {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    height: calc(100% - var(--team-image-height));
+    @include flexbox(center, space-between, column);
+  }
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    @include textClamp(2);
+  }
+  &-position {
+    font-family: $secondary-font;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: $text-color;
+  }
+  &-social {
+    @include flexbox(center, center);
+  }
+  &-social-link {
+    @include flexbox(center, center);
+    @include size(6rem);
+    @include bg($secondary-color);
+    color: $primary-color;
+    font-size: 2rem;
+    transition: all 0.25s linear;
+    &:hover {
+      color: #fff;
+      @include bg($primary-color);
+      transition: all 0.25s linear;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-list {
+      @include touchSlider(55%);
+    }
+  }
+  @include maxWidth(767px) {
+    --team-image-height: 40rem;
+    padding: 5rem 0;
+    &-list {
+      @include touchSlider(90%);
+    }
+  }
+}
+
+.branch {
+  padding: 8rem 0;
+  @include bg($gray-color);
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+}
+
+@include hoverEffect(".team-main", ".team-content");
