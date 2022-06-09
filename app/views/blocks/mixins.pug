@@ -76,3 +76,11 @@ mixin workItem(image,classItemFull="",title="Creatively designed",desc="Lorem ip
 			i.fa.fa-home.work-icon
 			h3.work-title=title
 			span.work-desc.text.text--light=desc
+
+mixin peopleItem(image, name="Mattthew dix",position="Graphic Design",desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos saepe dolore inventore sapiente soluta iste praesentium repudiandae quod, quas minus quaerat? Tempora inventore quaerat numquam unde expedita debitis, facere laborum!")
+	li.people-item
+		img.people-avatar(src=image)
+		.people-info
+			h3.people-name=name
+			span.people-position.text.text--light=position
+			p.people-desc=desc			
