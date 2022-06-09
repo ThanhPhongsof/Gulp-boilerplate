@@ -91,7 +91,7 @@
   width: $size;
   max-width: $size;
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: break-work;
 }
 
 @mixin hoverEffect($itemClass, $contentClass, $transform: "true") {

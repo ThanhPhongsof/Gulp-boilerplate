@@ -1,0 +1,132 @@
+.story {
+  --team-image-height: 24rem;
+  padding: 10rem 0;
+  &-list {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-column-gap: 2rem;
+    @include flexbox;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+    margin-left: 2rem;
+  }
+  &-media {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  &-image {
+    @include size(100%, var(--team-image-height));
+  }
+  &-content {
+    @include flexbox(center, space-between, column);
+    height: calc(100% - var(--team-image-height));
+  }
+  &-date {
+    @include bg($third-color);
+    @include flexbox(flex-start, space-between, column);
+    padding: 1.5em 2rem;
+    color: #fff;
+    position: absolute;
+    left: -1rem;
+    bottom: 1rem;
+    z-index: 2;
+    &-number {
+      font-weight: bold;
+      font-size: 3rem;
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    height: 4rem;
+    @include textClamp(2);
+  }
+  &-desc {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $boder-color;
+  }
+  &-desc-inner {
+    height: 6rem;
+    @include textClamp(3);
+  }
+  &-meta {
+    @include flexbox(center);
+    margin-bottom: auto;
+    position: relative;
+    bottom: 0;
+  }
+  &-meta-item {
+    margin-right: 2rem;
+  }
+  &-meta-icon {
+    color: $third-color;
+    margin-right: 5px;
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-image {
+      height: 14rem;
+    }
+    &-date {
+      padding: 1rem 1.5rem;
+    }
+    &-title {
+      font-size: 1.2rem;
+    }
+    &-desc {
+      font-size: 1.3rem;
+    }
+    &-desc-inner {
+      @include textClamp(4);
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0 0;
+    &-list {
+      display: block;
+    }
+    &-item {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+    &-image {
+      height: auto;
+    }
+    &-date {
+      bottom: 5px;
+      left: -5px;
+    }
+  }
+}
+
+.map {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, rgba(#fff, 0.6), rgba(#fff, 0.5)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80")
+      no-repeat center / cover;
+  &-content {
+    @include flexbox(center, center, column);
+  }
+  &-icon {
+  }
+  &-heading {
+    position: relative;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: $primary-color;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    &:after {
+      content: "";
+      @include size(6.5rem, 4px);
+      @include bg($primary-color);
+      @include absoluteCenter;
+      bottom: 0;
+    }
+  }
+}

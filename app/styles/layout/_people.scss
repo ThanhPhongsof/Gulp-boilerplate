@@ -24,5 +24,39 @@
   }
   &-name {
     text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    @include textClamp(1);
+  }
+  &-position {
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    color: $title-color;
+    position: relative;
+    &::after {
+      content: "";
+      @include size(6.5rem, 4px);
+      @include bg($primary-color);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0 1rem;
+    &-item {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      padding: 0;
+      margin-top: 6rem;
+    }
+    &-avatar {
+      @include size(8rem);
+    }
   }
 }

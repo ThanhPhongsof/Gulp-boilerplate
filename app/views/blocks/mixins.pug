@@ -82,5 +82,24 @@ mixin peopleItem(image, name="Mattthew dix",position="Graphic Design",desc="Lore
 		img.people-avatar(src=image)
 		.people-info
 			h3.people-name=name
-			span.people-position.text.text--light=position
-			p.people-desc=desc			
+			span.people-position.text.text--light.text-default=position
+			p.people-desc.text.text--normal.text-default=desc
+
+mixin storyItem(image, title= "Lorem ipsum dolor, sit amet", desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", dateNumber= 15, dateText = "June", views = 1000, comments = 100)
+	.li.story-item
+		.story-media
+			img.story-image(src=image)
+			.story-date
+				span.story-date-number=dateNumber
+				span.story-date-text.text.text--light=dateText
+		.story-content
+			h3.story-title=title
+			.story-desc.text.text--normal
+				p.story-desc-inner=desc
+			.story-meta
+				.story-meta-item
+					i.fa.fa-eye.story-meta-icon
+					span.story-meta-number.text= views
+				.story-meta-item
+					i.fa.fa-comment.story-meta-icon
+					span.story-meta-number.text= comments
