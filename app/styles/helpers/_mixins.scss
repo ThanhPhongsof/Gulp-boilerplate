@@ -94,7 +94,7 @@
   word-break: break-all;
 }
 
-@mixin hoverEffect($itemClass, $contentClass) {
+@mixin hoverEffect($itemClass, $contentClass, $transform: "true") {
   #{$itemClass} {
     position: relative;
     z-index: 1;
@@ -112,17 +112,21 @@
       );
       z-index: 2;
     }
-    &:after {
-      content: "";
-      @include absoluteFull;
-      @include bg($third-color);
-      transition: transform 0.25s linear;
-      z-index: -1;
+    @if $transform == "true" {
+      &:after {
+        content: "";
+        @include absoluteFull;
+        @include bg($third-color);
+        transition: transform 0.25s linear;
+        z-index: -1;
+      }
     }
     &:hover {
-      transform: translate(-1rem, -1rem);
-      &::after {
-        transform: translate(1rem, 1rem);
+      @if $transform == "true" {
+        transform: translate(-1rem, -1rem);
+        &::after {
+          transform: translate(1rem, 1rem);
+        }
       }
       #{$contentClass} {
         opacity: 1;

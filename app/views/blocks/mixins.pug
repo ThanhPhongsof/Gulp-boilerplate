@@ -67,4 +67,12 @@ mixin teamItem(image, teamName, teamPosition)
 					block
 		.team-info
 			h3.team-name=teamName
-			span.team-position=teamPosition		
+			span.team-position=teamPosition
+
+mixin workItem(image,classItemFull="",title="Creatively designed",desc="Lorem ipsum dolor sit amet consectetur adipisicing elit")
+	.work-item(class=classItemFull)
+		img.work-image(src=image)
+		.work-content
+			i.fa.fa-home.work-icon
+			h3.work-title=title
+			span.work-desc.text.text--light=desc
