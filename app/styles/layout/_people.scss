@@ -19,4 +19,10 @@
     object-fit: cover;
     flex-shrink: 0;
   }
+  &-info {
+    padding-left: 3rem;
+  }
+  &-name {
+    text-transform: uppercase;
+  }
 }
