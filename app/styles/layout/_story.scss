@@ -19,7 +19,7 @@
     @include size(100%, var(--team-image-height));
   }
   &-content {
-    @include flexbox(center, space-between, column);
+    @include flexbox(flex-start, space-between, column);
     height: calc(100% - var(--team-image-height));
   }
   &-date {
@@ -55,8 +55,6 @@
   }
   &-meta {
     @include flexbox(center);
-    margin-bottom: auto;
-    position: relative;
     bottom: 0;
   }
   &-meta-item {
@@ -76,11 +74,13 @@
     }
     &-title {
       font-size: 1.2rem;
+      height: 15rem;
     }
     &-desc {
       font-size: 1.3rem;
     }
     &-desc-inner {
+      height: 11rem;
       @include textClamp(4);
     }
   }
@@ -99,6 +99,17 @@
     &-date {
       bottom: 5px;
       left: -5px;
+    }
+    &-title {
+      font-size: 1.2rem;
+      height: auto;
+    }
+    &-desc {
+      font-size: 1.3rem;
+    }
+    &-desc-inner {
+      height: auto;
+      display: inline-block;
     }
   }
 }

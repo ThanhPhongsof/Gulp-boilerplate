@@ -14,3 +14,14 @@ body {
   color: $title-color;
   font-size: 1.4rem;
 }
+
+input,
+button {
+  font-family: $primary-font;
+  outline: none;
+  line-height: 1;
+}
+
+button {
+  cursor: pointer;
+}
