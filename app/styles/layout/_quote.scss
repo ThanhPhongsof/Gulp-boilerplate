@@ -1,8 +1,8 @@
 .quote {
   padding: 6.5rem 0;
   @include bg($gray-color);
-  &-container {
-    @include flexbox(center, space-between);
+  &-list {
+    outline: none;
   }
   &-arrow {
     color: $gray-dark-color;
@@ -10,9 +10,10 @@
     font-size: 3rem;
     padding: 1rem 2rem;
   }
-  &-content {
+  &-item {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
+    overflow: none;
     @include flexbox(center);
   }
   &-icon {
@@ -20,9 +21,16 @@
     @include flexbox(center, center);
     border: 3px solid $third-color;
     flex-shrink: 0;
+    margin-left: 2rem;
+    margin-right: 6rem;
   }
-  &-info {
-    padding-left: 6rem;
+  &-image {
+    @include size(22rem);
+    margin-right: 3rem;
+    img {
+      border-radius: 50%;
+      @include size(100%);
+    }
   }
   &-desc {
     font-size: 2.5rem;
@@ -32,7 +40,7 @@
     font-style: italic;
     color: $text-color;
     margin-bottom: 2.5rem;
-    @include textClamp(3);
+    @include textClamp(2);
   }
   &-author {
     font-family: $third-font;
@@ -47,11 +55,32 @@
       left: 0;
     }
   }
+
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  .slick-arrow {
+    background-color: transparent;
+    border: 0;
+    color: $gray-dark-color;
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    @include absoluteCenter("top");
+    z-index: 2;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+
   @include maxWidth(767px) {
     &-arrow {
       display: none;
     }
-    &-content {
+    &-item {
       padding: 0;
       flex-direction: column;
     }
@@ -60,6 +89,7 @@
       img {
         max-width: 50%;
       }
+      margin-right: 0;
     }
     &-info {
       padding-left: 0;

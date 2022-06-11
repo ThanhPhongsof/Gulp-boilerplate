@@ -98,7 +98,10 @@
   #{$itemClass} {
     position: relative;
     z-index: 1;
-    transition: transform 0.25s linear;
+    & > * {
+      transition: transform 0.25s linear;
+      will-change: transform;
+    }
     #{$contentClass} {
       @include absoluteFull();
       @include flexbox(center, center, column);
@@ -117,16 +120,19 @@
         content: "";
         @include absoluteFull;
         @include bg($third-color);
-        transition: transform 0.25s linear;
         z-index: -1;
+        // transition: transform 0.25s linear;
+        will-change: transform;
       }
     }
     &:hover {
       @if $transform == "true" {
-        transform: translate(-1rem, -1rem);
-        &::after {
-          transform: translate(1rem, 1rem);
+        & > * {
+          transform: translate(-1rem, -1rem);
         }
+        // &::after {
+        //   transform: translate(1rem, 1rem);
+        // }
       }
       #{$contentClass} {
         opacity: 1;
@@ -149,4 +155,15 @@
   & > * {
     scroll-snap-align: start;
   }
+}
+
+@mixin color($config: ()) {
+  $config: extend(
+    (
+      color: red,
+    ),
+    $config
+  );
+
+  color: map-get($config, color);
 }

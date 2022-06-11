@@ -15,12 +15,12 @@ mixin blockBox(caption,title,desc)
 		if desc
 			p.block-box-desc=desc
 
-mixin aboutImage(image, iconClass,title = "Supper Team", alt = "")
+mixin aboutImage(data)
 	.about-item 
-		img.about-image(src=image, alt = "")
+		img.about-image(src= data.image, alt = "")
 		.about-content
-			i.about-icon(class=iconClass)
-			span.about-title=title
+			i.about-icon(class= data.iconClass)
+			span.about-title= data.title
 
 mixin numberItem(count, text)
 	.number-item
@@ -103,3 +103,15 @@ mixin storyItem(image, title= "Lorem ipsum dolor, sit amet", desc = "Lorem ipsum
 				.story-meta-item
 					i.fa.fa-comment.story-meta-icon
 					span.story-meta-number.text= comments
+
+mixin quoteItem(image="images/img-quote.png",type=false,author="Alan Tran",desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, placeat deleniti. Dicta fugiat")
+	.quote-item
+		if type == true
+			.quote-image
+				img(src=image)
+		else
+			.quote-icon
+				img(src=image)
+		.quote-info
+			p.quote-desc= desc
+			p.quote-author= author

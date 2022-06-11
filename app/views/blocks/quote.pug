@@ -1,11 +1,6 @@
 section.quote
 	.container
-		.quote-container
-			i.fal.fa-angle-left.quote-arrow-left.quote-arrow
-			.quote-content
-				.quote-icon
-					img(src="../images/img-quote.png")
-				.quote-info
-					p.quote-desc "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, placeat deleniti. Dicta fugiat, eligendi eaque odit voluptate voluptatum repellat, alias dolor sit corrupti dolores, consequatur adipisci deserunt facere repellendus praesentium?"
-					p.quote-author Alan Tran
-			i.fal.fa-angle-right.quote-arrow-right.quote-arrow
+		.quote-list
+			+quoteItem("https://images.unsplash.com/photo-1633307458500-d4fcec45cc15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", true, "Alan Tran")
+			+quoteItem("https://images.unsplash.com/photo-1633307458354-292dd679a763?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", true, "Vivian Nguyen")
+			+quoteItem("https://images.unsplash.com/photo-1633307458785-a46caefdcaaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", true,"Anna Nguyen")

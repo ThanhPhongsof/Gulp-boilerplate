@@ -32,6 +32,11 @@
     font-size: 1.8rem;
     line-height: 1.4;
     @include textClamp;
+    @include color(
+      (
+        color: #fff,
+      )
+    );
   }
   @include maxWidth(767px) {
     padding-top: 5rem;
