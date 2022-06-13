@@ -424,9 +424,9 @@ button {
       width: 100%;
       border-left: 0;
       padding: 2.5rem 1.5rem; }
-      .number-item :last-child {
+      .number-item:last-child {
         border-right: 0; }
-      .number-item :not(last-child) {
+      .number-item:not(last-child) {
         border-bottom: 1px solid #fff; } }
 
 .service {
@@ -1361,7 +1361,8 @@ button {
         display: block; }
       .story-item {
         width: 100%;
-        margin-bottom: 5rem; }
+        margin-bottom: 5rem;
+        margin-left: 0; }
       .story-image {
         height: auto; }
       .story-date {
